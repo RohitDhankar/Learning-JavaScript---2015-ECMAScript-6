@@ -1,0 +1,83 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html dir="ltr" lang="en">
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1"> 
+    <title>Padding STRINGS </title>
+
+</head>
+
+
+<body>
+
+  <p> Non Book code PADDING STRINGS :-  </p>
+
+  <script type="text/javascript">
+    // Source  - https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/padStart
+
+    const str1 = '666';
+    //const str_2 = str1.padStart(8, '0');
+    //  Uncaught TypeError: str1.padStart is not a function
+    // Is padStart not defined ?? Lets try n check 
+    if(str1 != undefined) alert("Str1 Defined");
+    if(typeof padStart == 'undefined') alert("padStart is undefined");
+    document.write(str_2);
+    
+    // expected output: "05"
+
+    // const fullNumber = '2034399002125581';
+    // const last4Digits = fullNumber.slice(-4);
+    // const maskedNumber = last4Digits.padStart(fullNumber.length, '*');
+
+    // console.log(maskedNumber);
+
+
+  </script>
+</body>
+</html>
+
+<!-- FOO_Notes_from_book >>
+    
+    conditional statements and loops: two of the most valuable
+tools for decision making. In order to make decisions in a computer language, we need to let
+the program know what should happen in response to certain conditions, which is where con-
+ditional statements come in. 
+
+Loops, on the other hand, simply allow you to repeat an action
+until a specified circumstance is met. For example, you might want to loop through each input
+box in a form and check the information it contains is valid. -->
+
+<!-- 
+    Primitive DATA TYPES - store only SINGLE VALUES 
+STRING
+NUMBER 
+BOOLEAN
+  -->
+
+
+ <!-- 2 More >> Primitive DATA TYPES
+   
+# Null: Indicates that there is no data.
+# Undefined: Indicates that something has not been defined and given a value. This is
+important when you’re working with variables. 
+
+-->
+
+<!-- 
+## STRINGS are OK with SINGLE and DOUBLE Quotes 
+# If we need SINGLE Quotes inside a STRING - then START and END String with DOUBLE Quotes
+# The START and END Quotes are >> ***delimiter***
+#
+# # ESCAPE SEQUENCES - better than QUOTES 
+\b Backspace.
+\f Form feed.
+\n Newline.
+\r Carriage return.
+\t Tab.
+\' Single quote. >> ('STRING\'s with a single quote within') uses ESCAPE SEQUENCE \'
+\" Double quote.
+\\ Backslash. 
+
+Here above - The escape sequence tells the JavaScript interpreter that the single quotation mark belongs to
+the string itself and isn’t a ***delimiter***.
+-->
