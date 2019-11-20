@@ -26,6 +26,15 @@
     document.write(string_2);
     console.log("TEST_2 -- When done above with the -- document.write - Could not get DOUBLE WHITE SPACE padded on the left  ")
 
+    const string_3 = '<p>TEST_2-- string_3-- Hexa Decimal ALPHABET = C == "\\x43":';
+    //  + '    ' + '\x43' + '</p>';
+    const string_4 = '       '; // this empty space - doesnt get padded in the middle?
+    const string_5 = 'concats_strings_test_with_variables_and_document.write';
+
+    document.write(string_3+string_4+string_5);
+    // FOO_TBD -- const string_4 = '       '; // this empty space - doesnt get padded in the middle?
+
+
     /* document.write() is not to be used in production code - its ok to be used here with this books code 
     https://stackoverflow.com/a/802943/4928635
     https://developer.mozilla.org/en-US/docs/Web/API/Document/write
