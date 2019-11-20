@@ -12,6 +12,8 @@
     <p> Below PARAGRAPH written by Document.Write() =  </p>
 
   <script type="text/javascript">
+
+    // FOO_TBD -- document.write() -- is Depreciated -- bad Practise -- https://stackoverflow.com/questions/802854/why-is-document-write-considered-a-bad-practice
     
     document.write('<p>Hexa Decimal ALPHABET = C == "\\x43":' + '    ' + '\x43' + '</p>');
     const string_1 = '<p>Hexa Decimal ALPHABET = C == "\\x43":' + '    ' + '\x43' + '</p>';
@@ -19,6 +21,10 @@
     console.log("Below -- string_1 , this prints in CONSOLE - DOUBLE WHITE SPACE padded on the left ")
     console.log(string_1)
     console.log("When done above with the -- document.write - Could not get DOUBLE WHITE SPACE padded on the left  ")
+
+    const string_2 = '<p>TEST-- string_2-- Hexa Decimal ALPHABET = C == "\\x43":' + '    ' + '\x43' + '</p>';
+    document.write(string_2);
+    console.log("SAme again -- When done above with the -- document.write - Could not get DOUBLE WHITE SPACE padded on the left  ")
 
   </script>
 </body>
