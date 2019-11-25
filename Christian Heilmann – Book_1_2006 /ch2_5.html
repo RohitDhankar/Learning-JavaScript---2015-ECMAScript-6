@@ -8,18 +8,21 @@
 
 
 <body>
-<p> Chapter -2 - page 23-24 :-  </p>
+<p> Chapter -2 - page 25-29 :-  </p>
 <script type="text/javascript">
 var some_whiteSpace = "    ";
 
 var prod_11  = (11 * prompt( "Ur number * 11 ", "" ) );
 document.write(prod_11);
-//document.write(some_whiteSpace);
+// above -- m77 = NaN , 
+document.write("<br>")
+document.write(typeof(dataTypeStrToNumber));
+// above when m77 = NaN , the typeof() is - undefined
 document.write("<br>")
 //
 var prod_22  = (22 * prompt( "Ur number * 22 ", "" ) );
 document.write(prod_22);
-//document.write(some_whiteSpace);
+// above -- m77 = NaN , 
 document.write("<br>")
 //
 var dataTypeStrToNumber  = prompt( "Number u enter will be a STRING DType - we will convert to NUM DType ", "" ) ;
@@ -27,7 +30,9 @@ document.write(typeof(dataTypeStrToNumber));
 document.write("<br>")
 //var dataTypeStrToNumber  = Number(dataTypeStrToNumber)
 //var dataTypeStrToNumber  = parseFloat(dataTypeStrToNumber)
-var dataTypeStrToNumber  = parseInt(dataTypeStrToNumber)
+// above with parseFloat -- m77 = NaN , .77 = 0.77 , 16.07H = 16.07
+//var dataTypeStrToNumber  = parseInt(dataTypeStrToNumber)
+// above with parseInt -- m77 = NaN , 0.77 = 0 , 16.07H = 16 , +16.998 = 16
 document.write(typeof(dataTypeStrToNumber));
 document.write("<br>")
 document.write(dataTypeStrToNumber);
