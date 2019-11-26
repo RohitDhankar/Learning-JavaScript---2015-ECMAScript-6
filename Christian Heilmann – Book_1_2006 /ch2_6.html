@@ -1,0 +1,163 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html dir="ltr" lang="en">
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1"> 
+    <title> CompositeDataTypes -Array and Object  </title>
+</head>
+
+
+<body>
+<p> Chapter -2 - page 30 :-  </p>
+<script type="text/javascript">
+
+var myStringPrimitive= "abc";
+document.write( typeof( myStringPrimitive ) ); // STRING - Primitive
+document.write( "<br>" );
+document.write( myStringPrimitive.length );
+document.write( "<br>" );
+document.write( typeof( myStringPrimitive ) );
+
+//
+document.write( "<br>" );
+document.write( "<br>" );
+document.write( "<br>" );
+document.write("myStringObject-------below ------------");
+document.write( "<br>" );
+document.write( "<br>" );
+document.write( "<br>" );
+
+
+var myStringObject = new String( "abc" );
+document.write( typeof( myStringObject ) ); // STRING - Object 
+document.write( "<br />" );
+document.write( myStringObject.length );
+document.write( "<br />" );
+document.write( typeof( myStringObject ) );
+var userEmail = "dhankar.rohit@gmail.com"
+var userEmail_1 = "dhankar.rohit1@gmail.com"
+var userEmail_2 = "dhankar.rohit_1_AT_gmail.com"
+document.write( "<br />" );
+document.write( userEmail.indexOf( "@" ));
+document.write( "<br />" );
+document.write( userEmail_1.indexOf( "@" ));
+document.write( "<br />" );
+document.write( userEmail_2.indexOf( "@" ));// -1 as the @ is not in the string anymore
+//
+/* 
+If the @ is not found, -1 is written to the page. As long as the character is there in the
+string somewhere, its position in the index, in other words something greater than –1, will be
+returned.
+
+The substring() method carves one string from another string, taking the indexes of the
+start and end position of the substring as parameters. We can return everything from the first
+index to the end of the string by leaving off the second parameter.
+
+*/
+
+var myOldString = "Hello_ROHIT_DHANKAR";
+var myNewString = myOldString.substring( 5, 13 ); // _ROHIT_D
+document.write( "<br />" );
+document.write( myNewString );
+//
+/* 
+Note that the substring() method copies
+the substring that it returns, and it doesn’t alter the original string.
+The substring() method really comes into its own when you’re working with unknown
+values. Here’s another example that uses both the indexOf() and substring() methods
+*/
+document.write( "<br />" );
+var characterName = "my name is Simpson, Homer";
+var firstNameIndex = characterName.indexOf( "Simpson," ) + 9; 
+// gets the Index + 9 - of the first Alphabet of Simpson, 
+var firstName = characterName.substring( firstNameIndex );
+document.write( firstName );
+document.write( "<br />" );
+document.write( "<br />" );
+document.write( "<br />" );
+//
+// JavaScript doesn’t have a primitive --date-- data type
+//
+// we can only create Date objects explicitly.
+//
+// Create a new date object
+var someDate = new Date( "31 Jan 2003 11:59" );
+document.write("someDate = new Date = 31 Jan 2003 11:59");
+// Retrieve the first four values using the
+// appropriate get methods
+document.write( "<br />" );
+document.write( "<br />" );
+document.write( "Minutes = " + someDate.getMinutes() + "<br>" );
+document.write( "Year = " + someDate.getFullYear() + "<br>" );
+document.write( "Month = JAN being ZERO Indexed == " + someDate.getMonth() + "<br>" );
+document.write( "Date = " + someDate.getDate() + "<br>" );
+// Set the minutes to 34
+someDate.setMinutes( 34 );
+document.write( "Minutes = " + someDate.getMinutes() + "<br>" );
+// Reset the date to anything beyond - 31st ... will start indexing from 31 + date
+someDate.setDate( 36 );// gives 5th as the date == 31st of Month + 5
+document.write( "Date = " + someDate.getDate() + "<br>" );
+document.write( "Month = " + someDate.getMonth() + "<br>" );
+//
+//
+// TBD --- WIP
+
+
+
+
+
+
+
+
+
+
+
+// Ask the user to enter a date string
+var originalDate = prompt( Enter a date (Day, Name of the Month, Year), "31 Dec 2003" );
+// Overwrite the originalDate variable with a new Date
+// object
+var originalDate = new Date( originalDate );
+// Ask the user to enter the number of days to be
+// added, and convert to number
+var addDays = Number( prompt( "Enter number of days to be added", "1" ) )
+// Set a new value for originalDate of originalDate
+// plus the days to be added
+originalDate.setDate( originalDate.getDate( ) + addDays )
+// Write out the date held by the originalDate
+// object using the toString( ) method
+document.write( originalDate.toString( ) )
+
+
+
+
+
+
+
+
+
+/*Initializing your variables is a very good idea, especially if you can give them a default
+value that’s useful to the application. Even initializing a variable to an empty string can be a
+good idea, because you can check back on it without bringing up the error messages that would
+have popped up if it didn’t have a value.
+*/
+
+
+/* document.write() is not to be used in production code - its ok to be used here with this books code 
+    https://stackoverflow.com/a/802943/4928635
+    https://developer.mozilla.org/en-US/docs/Web/API/Document/write
+*/
+
+
+</script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
