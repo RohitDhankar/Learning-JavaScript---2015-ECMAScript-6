@@ -26,7 +26,10 @@ document.write( "<br />" );
 var originalDate = new Date( originalDate );
 document.write(typeof(originalDate)); // prints == object 
 //how do we print out Object of Type DATE 
-// Object.prototype.toString.call(date)
+// We below check the OBJECTS Class to confirm that its of CLASS == DATE
+// Object.prototype.toString.call(originalDate)
+//console.log(Object.prototype.call(originalDate));  // Uncaught TypeError: Object.prototype.call is not a function
+//console.log(Object.toString.call(originalDate));  // ch2_7.html:32 Uncaught TypeError: Function.prototype.toString is not generic
 console.log(Object.prototype.toString.call(originalDate));  // '[object Date]'
 document.write( "<br />" );
 document.write( "<br />" );
@@ -45,10 +48,49 @@ document.write( originalDate.toString( ));
 //
 
 
+/* FOO--Important --- The CLASS of the OBJECT is Different from TYPE of the OBJECT
+SOURCE -- https://stackoverflow.com/questions/4222394/using-object-prototype-tostring-call-to-return-object-type-with-javascript-n
+Well, first of all I want to tell you that Object.prototype.toString returns the value of the object's internal [[Class]] property, it isn't really a Type.
+The value of this internal property represents the specification defined classification of an object (more info here).
+Javascript has only 6 language types: Object, String, Number, Boolean, Null and Undefined, that's it.
+The value of the [[Class]] internal property for host objects -as DOM elements- can be anything, it is completely implementation-dependent, on built-in objects is safe to use it -except with some exceptions in IE
+*/
 
 
 
+// External to Book -- Source -- MDN -- https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/toString
+// Further understanding - Object.prototype.toString
 
+// function Dog(name) {
+//   this.name = name;
+// }
+
+// var dog1 = new Dog('Gabby');
+
+// Dog.prototype.toString = function dogToString() {
+//   return '' + this.name;
+// }
+console.log("----------dog1.toString()-----------");
+// console.log(dog1.toString());
+// expected output: "Gabby"
+
+/* MDN --- toString() == https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/toString#Using_toString_to_detect_object_class
+toString() can be used with every object and allows you to get its class.
+To use the Object.prototype.toString() with every object, you need to call Function.prototype.call()
+or Function.prototype.apply() on it, passing the object you want to inspect as the first parameter called thisArg.
+*/
+
+function Dog(name, breed, color, sex) {
+  this.name = name;
+  this.breed = breed;
+  this.color = color;
+  this.sex = sex;
+}
+
+theDog = new Dog('Gabby', 'Lab', 'chocolate', 'female');
+console.log("------------theDog.prototype.toString-----------");
+console.log(theDog);
+console.log(theDog.toString());
 
 
 </script>
