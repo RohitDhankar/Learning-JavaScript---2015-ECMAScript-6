@@ -1,0 +1,66 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html dir="ltr" lang="en">
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1"> 
+    <title> CompositeDataTypes -Array and Object - DateObject  </title>
+</head>
+
+
+<body>
+<p> Chapter -2 - page 36 :-  </p>
+<script type="text/javascript">
+
+// Ask the user to enter a date string
+var originalDate = prompt("Enter a date (Day, Name of the Month, Year)", "31 Dec 2003" );
+document.write(typeof(originalDate)); // STRING - Primitive
+document.write( "<br />" );
+document.write( "<br />" );
+
+// The - 31 Dec 2003 --- shown in the Text Box of the prompt() , is a placeholder for the DateObject
+
+
+// Original Comment from Book - AMBIGIOUS -- Overwrite the originalDate variable with a new Date Object
+// WIKI -- Type cast --  type conversion, type casting, type coercion, and type juggling are different ways of changing an expression from one data type to another.
+// Thus below we - type cast 
+var originalDate = new Date( originalDate );
+document.write(typeof(originalDate)); // prints == object 
+//how do we print out Object of Type DATE 
+// Object.prototype.toString.call(date)
+console.log(Object.prototype.toString.call(originalDate));  // '[object Date]'
+document.write( "<br />" );
+document.write( "<br />" );
+document.write(Object.prototype.toString.call(originalDate));  // '[object Date]'
+document.write( "<br />" );
+document.write( "<br />" );
+//
+//
+// Ask the user to enter the number of days to be added, and convert to number
+var addDays = Number( prompt( "Enter number of days to be added", "1" ));
+// Set a new value for originalDate of originalDate plus the days to be added
+originalDate.setDate( originalDate.getDate( ) + addDays );
+// Write out the date held by the originalDate object using the toString( ) method
+document.write( originalDate.toString( ));
+//
+//
+
+
+
+
+
+
+
+
+</script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
